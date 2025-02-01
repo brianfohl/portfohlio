@@ -14,3 +14,7 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+const backgroundStyle = {
+  backgroundImage: `url('${process.env.NODE_ENV === 'production' ? '/portfohlio' : ''}/background.jpg')`
+};
