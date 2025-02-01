@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
+const isProduction = process.env.NODE_ENV === 'production';
+const repository = 'portfohlio';
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export',
+  basePath: isProduction ? `/${repository}` : '',
+  assetPrefix: isProduction ? `/${repository}/` : '',
+  images: {
+    unoptimized: true,
+    domains: ['brianfohl.github.io'],
+  },
 };
 
 export default nextConfig;
