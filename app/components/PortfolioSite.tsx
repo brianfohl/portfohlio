@@ -87,7 +87,7 @@ const PortfolioSite = () => {
             BRIAN FOHL
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-gray-300 text-lg text-white">
-            DevOps Leader & Mentor
+            Engineering Leader & DevOps Architect
           </p>
         </div>
       </section>
@@ -143,10 +143,9 @@ const PortfolioSite = () => {
           <div className="space-y-12">
             {[
              {
-              title: 'Senior DevSecOps Engineer',
-              company: 'Revacomm / Intellibridge',
-              period: 'OCT 2020 - Present',
-              role: 'Pipelines Subject Matter Expert - Centers for Medicare & Medicaid Services, DHHS',
+              title: 'Pipeline Subject Matter Expert',
+              company: 'Centers for Medicare and Medicaid Services (via Revacomm / Intellibridge)',
+              period: 'OCT 2023 - Present',
               achievements: [
                 'Led the initiative to improve CI/CD pipelines using Jenkins and Kubernetes, resulting in a significant reduction in build/deployment times and a measurable increase in release reliability.',
                 'Guided the development and prototyping of migration plans from GitLab CI to GitHub & Jenkins, strategically enhancing CI/CD efficiency and reliability.',
@@ -160,7 +159,7 @@ const PortfolioSite = () => {
             },
             {
               title: 'Lead DevSecOps Engineer',
-              company: 'Department of Defense, Platform One',
+              company: 'Department of Defense, Platform One (via Revacomm / Intellibridge)',
               period: 'OCT 2020 - OCT 2023',
               achievements: [
                 'Orchestrated the establishment of robust CI/CD pipelines with GitLab and Docker, automating infrastructure for mission-critical applications.',
