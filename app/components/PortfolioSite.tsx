@@ -216,7 +216,6 @@ const PortfolioSite = () => {
                 <h3 className="text-xl font-bold mb-2 text-emerald-400">{experience.title}</h3>
                 <p className="text-gray-400 mb-2">{experience.company}</p>
                 {experience.period && <p className="text-sm text-gray-500 mb-4">{experience.period}</p>}
-                {experience.role && <p className="text-gray-300 mb-4 italic">{experience.role}</p>}
                 <ul className="list-disc pl-6 space-y-2">
                   {experience.achievements.map((achievement, index) => (
                     <li key={index} className="text-gray-300">{achievement}</li>
