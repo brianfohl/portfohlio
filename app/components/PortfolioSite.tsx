@@ -224,6 +224,9 @@ const PortfolioSite = () => {
                 </ul>
               </div>
             ))}
+            <div className="text-center text-gray-400 italic">
+              Additional experience available upon request
+            </div>
           </div>
         </div>
       </section>
