@@ -5,8 +5,8 @@ const repository = 'portfohlio';
 
 const nextConfig: NextConfig = {
   output: 'export',
+  assetPrefix: isProduction ? `https://brianfohl.github.io/${repository}` : '',
   basePath: isProduction ? `/${repository}` : '',
-  assetPrefix: isProduction ? `/${repository}/` : '',
   images: {
     unoptimized: true,
     domains: ['brianfohl.github.io'],

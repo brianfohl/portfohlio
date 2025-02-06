@@ -5,6 +5,15 @@ import React, { useState } from 'react';
 const PortfolioSite = () => {
   const [activeSection, setActiveSection] = useState('home');
   
+  const getAssetPath = (path: string) => {
+    const isProduction = process.env.NODE_ENV === 'production';
+    const repository = 'portfohlio';
+    // Use the full GitHub Pages URL in production
+    return isProduction 
+      ? `https://brianfohl.github.io/${repository}${path}`
+      : path;
+  };
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -70,7 +79,7 @@ const PortfolioSite = () => {
       <section 
         id="home" 
         className="h-screen flex items-center justify-center relative bg-cover bg-center" 
-        style={{ backgroundImage: "url('/background.jpg')" }}
+        style={{ backgroundImage: `url('${getAssetPath('/background.jpg')}')`}}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-75"></div>
         <div className="relative text-center p-8 rounded mt-[10%]">
