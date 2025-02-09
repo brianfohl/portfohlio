@@ -11,6 +11,17 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     domains: ['brianfohl.github.io'],
   },
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  webpack: (config, { dev, isServer }) => {
+    // Only exclude tests in production
+    if (!dev) {
+      config.module.rules.push({
+        test: /\.test\.(js|jsx|ts|tsx)$/,
+        loader: 'ignore-loader'
+      });
+    }
+    return config;
+  },  
 };
 
 export default nextConfig;

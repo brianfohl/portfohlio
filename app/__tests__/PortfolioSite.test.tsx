@@ -11,7 +11,6 @@ describe('PortfolioSite', () => {
 
   it('renders navigation items', () => {
     render(<PortfolioSite />)
-    const desktopNav = screen.getByRole('navigation')
     const navItems = ['home', 'expertise', 'work', 'contact']
     navItems.forEach(item => {
       // Use getAllByText and check if at least one exists
