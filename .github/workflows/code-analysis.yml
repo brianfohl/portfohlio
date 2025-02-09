@@ -53,7 +53,9 @@ jobs:
           args: >
             -Dsonar.projectKey=brianfohl_portfohlio
             -Dsonar.organization=brianfohl
+            -Dsonar.projectBaseDir=.  
             -Dsonar.sources=app
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
             -Dsonar.coverage.exclusions=**/*.test.ts,**/*.test.tsx,**/__mocks__/**/*
+            -Dsonar.verbose=true
         continue-on-error: true
