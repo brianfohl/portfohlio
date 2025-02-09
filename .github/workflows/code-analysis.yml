@@ -51,7 +51,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=portfohlio
+            -Dsonar.projectKey=brianfohl_portfohlio
             -Dsonar.organization=brianfohl
             -Dsonar.sources=app
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
