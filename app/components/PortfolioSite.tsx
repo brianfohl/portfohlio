@@ -43,6 +43,7 @@ const PortfolioSite = () => {
               <button 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="text-white hover:text-emerald-400 transition-colors"
+                aria-label="Toggle menu"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path 
@@ -92,7 +93,7 @@ const PortfolioSite = () => {
           </div>
 
           {/* Mobile Navigation Menu */}
-          <div className={`${mobileMenuOpen ? 'flex' : 'hidden'} md:hidden flex-col mt-4 space-y-4`}>
+          <div  data-testid="mobile-menu" className={`${mobileMenuOpen ? 'flex' : 'hidden'} md:hidden flex-col mt-4 space-y-4`}>
             <div className="flex justify-center space-x-4">
               <a 
                 href="https://github.com/brianfohl" 
