@@ -51,8 +51,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=fohlin_portfohlio
-            -Dsonar.organization=fohlin
+            -Dsonar.projectKey=portfohlio
+            -Dsonar.organization=brianfohl
             -Dsonar.sources=app
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
             -Dsonar.coverage.exclusions=**/*.test.ts,**/*.test.tsx,**/__mocks__/**/*
