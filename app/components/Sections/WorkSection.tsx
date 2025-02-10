@@ -86,8 +86,8 @@ const WorkSection: React.FC = () => {
               <p className="text-gray-400 mb-2">{experience.company}</p>
               {experience.period && <p className="text-sm text-gray-500 mb-4">{experience.period}</p>}
               <ul className="list-disc pl-6 space-y-2">
-                {experience.achievements.map((achievement, index) => (
-                  <li key={index} className="text-gray-300">{achievement}</li>
+                {experience.achievements.map((achievement, key) => (
+                  <li key={key} className="text-gray-300">{achievement}</li>
                 ))}
               </ul>
             </div>
