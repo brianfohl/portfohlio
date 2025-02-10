@@ -2,9 +2,9 @@ name: Static Code Analysis
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, Fix* ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, Fix* ]
 
 jobs:
   analyze:
