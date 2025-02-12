@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfohlio
 
-## Getting Started
+Welcome to my Portfohlio (a play on my last name, Fohl) - a showcase of my professional experience and technical capabilities. This project serves both as my online resume and a demonstration of modern web development and DevOps practices.
 
-First, run the development server:
+## 🌟 Features
+
+- Next.js-powered portfolio website
+- Responsive design with Tailwind CSS
+- Docker containerization
+- Comprehensive unit testing
+- Static code analysis with SonarQube
+- Automated CI/CD pipeline with GitHub Actions
+- GitHub Pages deployment
+
+## 🛠️ Technology Stack
+
+- **Framework**: Next.js with TypeScript
+- **Styling**: Tailwind CSS
+- **Testing**: Jest with React Testing Library
+- **Code Quality**: 
+  - ESLint for code linting
+  - SonarQube for static code analysis
+- **DevOps**:
+  - Docker for containerization
+  - GitHub Actions for CI/CD
+  - GitHub Pages for hosting
+
+## 🚀 Getting Started
+
+### Local Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Docker Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Build and run with Docker Compose
+docker compose up --build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Or build and run Docker container directly
+docker build -t portfohlio .
+docker run -p 3000:3000 portfohlio
+```
 
-## Learn More
+Visit [http://localhost:3000](http://localhost:3000) to view the site.
 
-To learn more about Next.js, take a look at the following resources:
+## 🧪 Testing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Run unit tests
+npm test
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Generate coverage report
+npm run test:coverage
+```
 
-## Deploy on Vercel
+## 📊 Quality Metrics
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Unit Test Coverage: [Add your coverage percentage]
+- SonarQube Quality Gate: [Add status]
+- GitHub Actions Build: [![GitHub Actions Status](https://github.com/brianfohl/portfohlio/actions/workflows/pages.yml/badge.svg)](https://github.com/brianfohl/portfohlio/actions)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 Development Practices
+
+This project demonstrates several modern development practices:
+
+- **Test-Driven Development (TDD)**: Comprehensive unit tests with good coverage
+- **Continuous Integration**: Automated testing and code analysis on every push
+- **Continuous Deployment**: Automatic deployment to GitHub Pages
+- **Container Strategy**: Multi-stage Docker builds for optimized production images
+- **Code Quality**: Automated code quality checks with SonarQube
+
+## 🌐 Deployment
+
+The site is automatically deployed to GitHub Pages through GitHub Actions. The deployment pipeline includes:
+
+1. Code quality checks
+2. Unit testing
+3. Static code analysis
+4. Build and deployment
+
+Visit [Add your GitHub Pages URL] to see the live site.
+
+## 📖 Project Structure
+
+```
+portfohlio/
+├── app/           # Next.js application files
+├── public/        # Static assets
+├── tests/         # Test files
+├── .github/       # GitHub Actions workflows
+├── Dockerfile     # Docker configuration
+└── docker-compose.yml
+```
+
+## 🤝 Contributing
+
+While this is primarily a personal portfolio project, I welcome feedback and suggestions! Feel free to open an issue or submit a pull request.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+Built by Brian Fohl
