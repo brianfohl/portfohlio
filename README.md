@@ -85,7 +85,7 @@ The site is automatically deployed to GitHub Pages through GitHub Actions. The d
 3. Static code analysis
 4. Build and deployment
 
-Visit [Add your GitHub Pages URL] to see the live site.
+Visit https://brianfohl.github.io/portfohlio/ to see the live site.
 
 ## 📖 Project Structure
 
