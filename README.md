@@ -62,8 +62,8 @@ npm run test:coverage
 
 ## 📊 Quality Metrics
 
-- Unit Test Coverage: [Add your coverage percentage]
-- SonarQube Quality Gate: [Add status]
+- Unit Test Coverage: 90.7%
+- SonarQube Quality Gate: Passed
 - GitHub Actions Build: [![GitHub Actions Status](https://github.com/brianfohl/portfohlio/actions/workflows/pages.yml/badge.svg)](https://github.com/brianfohl/portfohlio/actions)
 
 ## 📝 Development Practices
