@@ -62,8 +62,8 @@ npm run test:coverage
 
 ## 📊 Quality Metrics
 
-- Unit Test Coverage: 90.7%
-- SonarQube Quality Gate: Passed
+- Unit Test Coverage: [Add your coverage percentage]
+- SonarQube Quality Gate: [Add status]
 - GitHub Actions Build: [![GitHub Actions Status](https://github.com/brianfohl/portfohlio/actions/workflows/pages.yml/badge.svg)](https://github.com/brianfohl/portfohlio/actions)
 
 ## 📝 Development Practices
@@ -91,12 +91,30 @@ Visit [Add your GitHub Pages URL] to see the live site.
 
 ```
 portfohlio/
-├── app/           # Next.js application files
-├── public/        # Static assets
-├── tests/         # Test files
-├── .github/       # GitHub Actions workflows
-├── Dockerfile     # Docker configuration
-└── docker-compose.yml
+├── app/                    # Next.js application files
+│   ├── __tests__/         # Unit tests
+│   ├── components/        # React components
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx          # Main page
+│   └── globals.css       # Global styles
+├── __mocks__/            # Jest mocks
+├── coverage/             # Test coverage reports
+├── public/               # Static assets
+├── .github/              # GitHub Actions workflows
+│   └── workflows/
+│       ├── code-analysis.yml
+│       └── pages.yml
+├── node_modules/         # Dependencies
+├── Dockerfile           # Docker configuration
+├── docker-compose.yml   # Docker Compose configuration
+├── .dockerignore        # Docker ignore file
+├── next.config.ts       # Next.js configuration
+├── postcss.config.mjs   # PostCSS configuration
+├── tailwind.config.ts   # Tailwind CSS configuration
+├── tsconfig.json        # TypeScript configuration
+├── jest.config.mjs      # Jest configuration
+├── jest.setup.js        # Jest setup file
+└── eslint.config.mjs    # ESLint configuration
 ```
 
 ## 🤝 Contributing
@@ -108,4 +126,4 @@ While this is primarily a personal portfolio project, I welcome feedback and sug
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
-Built by Brian Fohl
+Built with 💻 by Brian Fohl
