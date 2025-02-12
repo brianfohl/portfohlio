@@ -2,11 +2,16 @@ import type { NextConfig } from "next";
 
 const isProduction = process.env.NODE_ENV === 'production';
 const repository = 'portfohlio';
+const isDocker = process.env.DOCKER === 'true';
 
 const nextConfig: NextConfig = {
+  // Always use 'export' as we're deploying to GitHub Pages
   output: 'export',
-  assetPrefix: isProduction ? `https://brianfohl.github.io/${repository}` : '',
-  basePath: isProduction ? `/${repository}` : '',
+  // Only apply GitHub Pages settings when not in Docker
+  ...(isDocker ? {} : {
+    assetPrefix: isProduction ? `https://brianfohl.github.io/${repository}` : '',
+    basePath: isProduction ? `/${repository}` : '',
+  }),
   images: {
     unoptimized: true,
     domains: ['brianfohl.github.io'],
