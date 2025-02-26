@@ -1,0 +1,25 @@
+
+> portfohlio@0.1.0 test
+> jest
+
+---------------------------|---------|----------|---------|---------|-------------------
+File                       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------------|---------|----------|---------|---------|-------------------
+All files                  |   78.57 |    69.04 |   73.33 |   78.57 |                   
+ app                       |   27.27 |      100 |      50 |      30 |                   
+  layout.tsx               |       0 |      100 |       0 |       0 | 2-21              
+  page.tsx                 |     100 |      100 |     100 |     100 |                   
+ app/components            |   68.42 |    35.71 |   58.33 |   69.81 |                   
+  BackgroundPodcast.tsx    |       0 |        0 |       0 |       0 | 3-56              
+  PortfolioSite.tsx        |    97.5 |    83.33 |     100 |     100 | 35                
+ app/components/Navigation |   86.95 |      100 |   77.77 |      85 |                   
+  DesktopMenu.tsx          |     100 |      100 |     100 |     100 |                   
+  MobileMenu.tsx           |   66.66 |      100 |      50 |    62.5 | 59-71             
+  Navigation.tsx           |     100 |      100 |     100 |     100 |                   
+ app/components/Sections   |   93.65 |       75 |   81.81 |   92.98 |                   
+  BlogSection.tsx          |   89.18 |    76.92 |   69.23 |   88.57 | 212-222,234,315   
+  ContactSection.tsx       |     100 |      100 |     100 |     100 |                   
+  ExpertiseSection.tsx     |     100 |      100 |     100 |     100 |                   
+  HomeSection.tsx          |     100 |       50 |     100 |     100 | 9                 
+  WorkSection.tsx          |     100 |      100 |     100 |     100 |                   
+---------------------------|---------|----------|---------|---------|-------------------

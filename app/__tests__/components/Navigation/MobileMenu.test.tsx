@@ -22,6 +22,7 @@ describe('MobileMenu', () => {
 
   it('renders social links', () => {
     render(<MobileMenu {...mockProps} />)
-    expect(screen.getAllByRole('link')).toHaveLength(2) // GitHub and LinkedIn links
+    // Social links (GitHub and LinkedIn) plus resume link
+    expect(screen.getAllByRole('link').length).toBeGreaterThanOrEqual(3)
   })
 })

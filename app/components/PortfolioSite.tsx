@@ -5,6 +5,7 @@ import Navigation from './Navigation/Navigation';
 import HomeSection from './Sections/HomeSection';
 import ExpertiseSection from './Sections/ExpertiseSection';
 import WorkSection from './Sections/WorkSection';
+import BlogSection from './Sections/BlogSection';
 import ContactSection from './Sections/ContactSection';
 
 const PortfolioSite: React.FC = () => {
@@ -25,7 +26,7 @@ const PortfolioSite: React.FC = () => {
       }
       
       // Get sections
-      const sections = ['home', 'expertise', 'work', 'contact']
+      const sections = ['home', 'expertise', 'work', 'blog', 'contact']
         .map(id => ({ id, element: document.getElementById(id) }))
         .filter(({ element }) => element !== null);
 
@@ -73,6 +74,7 @@ const PortfolioSite: React.FC = () => {
       <HomeSection />
       <ExpertiseSection />
       <WorkSection />
+      <BlogSection />
       <ContactSection />
     </div>
   );

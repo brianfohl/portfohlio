@@ -12,7 +12,9 @@ interface MobileMenuProps {
 const navigation = [
   { id: 'home', label: 'home' },
   { id: 'expertise', label: 'expertise' },
+  { id: 'resume', label: 'resume', isExternal: true, path: '/brian-fohl-resume.docx' },
   { id: 'work', label: 'work' },
+  { id: 'blog', label: 'blog' },
   { id: 'contact', label: 'contact' }
 ];
 
@@ -48,18 +50,33 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
       </div>
       <div className="flex flex-col space-y-4">
         {navigation.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => {
-              scrollToSection(item.id);
-              setMobileMenuOpen(false);
-            }}
-            className={`text-sm ${
-              activeSection === item.id ? 'text-emerald-400' : 'text-white'
-            } hover:text-emerald-400 transition-colors`}
-          >
-            {item.label}
-          </button>
+          item.isExternal ? (
+            <a
+              key={item.id}
+              href={item.path}
+              download
+              className={`text-sm text-white hover:text-emerald-400 transition-colors flex items-center justify-center`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {item.label}
+              <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </a>
+          ) : (
+            <button
+              key={item.id}
+              onClick={() => {
+                scrollToSection(item.id);
+                setMobileMenuOpen(false);
+              }}
+              className={`text-sm ${
+                activeSection === item.id ? 'text-emerald-400' : 'text-white'
+              } hover:text-emerald-400 transition-colors`}
+            >
+              {item.label}
+            </button>
+          )
         ))}
       </div>
     </div>
