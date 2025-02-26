@@ -22,10 +22,15 @@ describe('Navigation', () => {
 
   it('renders navigation items', () => {
     render(<Navigation {...mockProps} />)
-    const navItems = ['home', 'expertise', 'work', 'contact']
-    navItems.forEach(item => {
+    // Internal navigation items
+    const internalNavItems = ['home', 'expertise', 'work', 'blog', 'contact']
+    internalNavItems.forEach(item => {
       const elements = screen.getAllByText(item)
       expect(elements.length).toBeGreaterThan(0)
     })
+    
+    // External link (resume)
+    const resumeElements = screen.getAllByText('resume');
+    expect(resumeElements.length).toBeGreaterThan(0);
   })
 })

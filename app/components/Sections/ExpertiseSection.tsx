@@ -33,7 +33,7 @@ const ExpertiseSection: React.FC = () => {
   return (
     <section id="expertise" className="py-20 bg-black">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-12 text-purple-400">EXPERTISE</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center text-purple-400">EXPERTISE</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {expertiseCategories.map((category) => (
             <div key={category.title} className="p-6 bg-black rounded-lg hover:bg-emerald-900/30 transition-colors">
