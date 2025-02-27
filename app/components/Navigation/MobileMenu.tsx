@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { getAssetPath } from '../../utils/assetPath';
 
 interface MobileMenuProps {
   mobileMenuOpen: boolean;
@@ -14,7 +15,6 @@ const navigation = [
   { id: 'expertise', label: 'expertise' },
   { id: 'resume', label: 'resume', isExternal: true, path: '/brian-fohl-resume.docx' },
   { id: 'work', label: 'work' },
-  { id: 'blog', label: 'blog' },
   { id: 'contact', label: 'contact' }
 ];
 
@@ -53,7 +53,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
           item.isExternal ? (
             <a
               key={item.id}
-              href={item.path}
+              href={getAssetPath(item.path)}
               download
               className={`text-sm text-white hover:text-emerald-400 transition-colors flex items-center justify-center`}
               onClick={() => setMobileMenuOpen(false)}
