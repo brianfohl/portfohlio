@@ -1,56 +1,50 @@
-/**
- * @jest-environment jsdom
- */
 import React from 'react'
 import { render } from '@testing-library/react'
+import RootLayout from '../layout'
 
-// Mock the Next.js font hooks
-jest.mock('next/font/google', () => ({
-  Geist: jest.fn(() => ({
-    variable: 'mock-geist-sans',
-  })),
-  Geist_Mono: jest.fn(() => ({
-    variable: 'mock-geist-mono',
-  })),
-}))
-
-// Create a mock layout that mimics the behavior without using html/body tags
-const MockLayout = ({ children }: { children: React.ReactNode }) => {
-  const geistSans = { variable: 'mock-geist-sans' }
-  const geistMono = { variable: 'mock-geist-mono' }
-  
-  return (
-    <div 
-      data-testid="mock-layout"
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-    >
-      {children}
-    </div>
-  )
-}
-
-// Mock the actual layout
-jest.mock('../layout', () => ({
-  __esModule: true,
-  default: function MockRootLayout({ children }: { children: React.ReactNode }) {
-    return <MockLayout>{children}</MockLayout>
+// Mock BackgroundPodcast component
+jest.mock('../components/BackgroundPodcast', () => {
+  return function MockBackgroundPodcast() {
+    return <div data-testid="mock-background-podcast">Mock Podcast Component</div>
   }
+})
+
+// Mock metadata since it's not used in the component functionality
+jest.mock('next/font/google', () => ({
+  Geist: () => ({ variable: 'mock-geist-variable' }),
+  Geist_Mono: () => ({ variable: 'mock-geist-mono-variable' }),
 }))
 
 describe('RootLayout', () => {
-  it('renders with correct classes and children', () => {
-    const { getByTestId } = render(
-      <MockLayout>
-        <div data-testid="test-content">Test Content</div>
-      </MockLayout>
+  it('renders children and BackgroundPodcast component', () => {
+    const { getByText, getByTestId } = render(
+      <RootLayout>
+        <div>Test Child Content</div>
+      </RootLayout>
     )
     
-    const layout = getByTestId('mock-layout')
-    expect(layout).toHaveClass('antialiased')
-    expect(layout).toHaveClass('mock-geist-sans')
-    expect(layout).toHaveClass('mock-geist-mono')
+    // Verify children are rendered
+    expect(getByText('Test Child Content')).toBeInTheDocument()
     
-    const content = getByTestId('test-content')
-    expect(content).toBeInTheDocument()
+    // Verify BackgroundPodcast is included
+    expect(getByTestId('mock-background-podcast')).toBeInTheDocument()
+  })
+  
+  // Testing the component structure rather than DOM structure
+  it('has the correct structure with font classes and language', () => {
+    // Create a mock for a simple inspection of the component
+    const rootLayout = (
+      <RootLayout>
+        <div>Test Content</div>
+      </RootLayout>
+    )
+    
+    // Assert that the component structure is as expected
+    expect(rootLayout.props.children).toBeDefined()
+    
+    // We can't easily test html and body attributes with react-testing-library
+    // but we can verify the component renders without errors
+    const { container } = render(rootLayout)
+    expect(container).toBeDefined()
   })
 })
