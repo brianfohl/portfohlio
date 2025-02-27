@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { getAssetPath } from '../../utils/assetPath';
 
 interface DesktopMenuProps {
   activeSection: string;
@@ -12,7 +13,6 @@ const navigation = [
   { id: 'expertise', label: 'expertise' },
   { id: 'resume', label: 'resume', isExternal: true, path: '/brian-fohl-resume.docx' },
   { id: 'work', label: 'work' },
-  { id: 'blog', label: 'blog' },
   { id: 'contact', label: 'contact' }
 ];
 
@@ -49,7 +49,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({
           item.isExternal ? (
             <a
               key={item.id}
-              href={item.path}
+              href={getAssetPath(item.path)}
               download
               className={`text-sm text-white hover:text-emerald-400 transition-colors flex items-center`}
             >

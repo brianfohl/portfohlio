@@ -11,7 +11,7 @@
     "test:coverage": "jest --coverage",
     "start": "next start",
     "lint": "next lint",
-    "predeploy": "NODE_ENV=production next build && touch out/.nojekyll",
+    "predeploy": "node exclude-large-files.js && NODE_ENV=production next build && touch out/.nojekyll",
     "deploy": "gh-pages -d out -t"
   },
   "dependencies": {

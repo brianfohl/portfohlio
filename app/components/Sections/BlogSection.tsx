@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import { getAssetPath } from '../../utils/assetPath';
 
 interface BlogPost {
   id: string;
@@ -254,7 +255,7 @@ const BlogSection: React.FC = () => {
               <div className="h-40 bg-gray-800 flex items-center justify-center">
                 {post.image ? (
                   <img 
-                    src={post.image} 
+                    src={getAssetPath(post.image)} 
                     alt={post.title} 
                     className="w-full h-full object-cover"
                   />
@@ -326,7 +327,7 @@ const BlogSection: React.FC = () => {
                 {selectedPost.image && (
                   <div className="h-64 bg-gray-800">
                     <img 
-                      src={selectedPost.image} 
+                      src={getAssetPath(selectedPost.image)} 
                       alt={selectedPost.title} 
                       className="w-full h-full object-cover"
                     />
@@ -380,10 +381,16 @@ function markdownToHtml(markdown: string): string {
   html = html.replace(/^- (.*$)/gm, '<li>$1</li>');
   
   // Convert consecutive list items into a proper list
-  const listItemRegex = /(<li>.*?<\/li>\s*)+/gs;
-  html = html.replace(listItemRegex, (match) => {
-    return `<ul class="list-disc pl-6 my-4">${match}</ul>`;
+  // Using a pattern that works with ES2017 (no 's' flag needed)
+  const listSections = html.split(/\n\n+/);
+  const wrappedListSections = listSections.map(section => {
+    // If this section contains list items
+    if (section.includes('<li>') && !section.includes('<ul>')) {
+      return `<ul class="list-disc pl-6 my-4">${section}</ul>`;
+    }
+    return section;
   });
+  html = wrappedListSections.join('\n\n');
   
   // Links
   html = html.replace(/\[(.*?)\]\((.*?)\)/gm, '<a href="$2" class="text-emerald-400 hover:underline">$1</a>');
