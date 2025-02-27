@@ -78,7 +78,7 @@ const WorkSection: React.FC = () => {
   return (
     <section id="work" className="py-20 bg-black">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-12 text-purple-400">WORK EXPERIENCE</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center text-purple-400">WORK EXPERIENCE</h2>
         <div className="space-y-12">
           {workExperience.map((experience) => (
             <div key={experience.title} className="p-6 bg-black rounded-lg hover:bg-emerald-900/30 transition-colors">

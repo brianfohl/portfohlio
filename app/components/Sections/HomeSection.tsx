@@ -1,16 +1,9 @@
 "use client";
 
 import React from 'react';
+import { getAssetPath } from '../../utils/assetPath';
 
 const HomeSection: React.FC = () => {
-  const getAssetPath = (path: string) => {
-    const isProduction = process.env.NODE_ENV === 'production';
-    const repository = 'portfohlio';
-    return isProduction 
-      ? `https://brianfohl.github.io/${repository}${path}`
-      : path;
-  };
-
   return (
     <section 
       id="home" 
