@@ -6,11 +6,21 @@ Welcome to my Portfohlio (a play on my last name, Fohl) - a showcase of my profe
 
 - Next.js-powered portfolio website
 - Responsive design with Tailwind CSS
+- Interactive resume download link
+- Personal podcast player with playback controls
 - Docker containerization
 - Comprehensive unit testing
 - Static code analysis with SonarQube
 - Automated CI/CD pipeline with GitHub Actions
 - GitHub Pages deployment
+
+## 🎯 User Experience Features
+
+### Resume Download
+The portfolio includes a convenient resume download link in the navigation bar. Users can easily download a copy of my professional resume in DOCX format for offline reference.
+
+### Personal Podcast Player
+A unique feature of this portfolio is the integrated podcast player that showcases my "Tech Talk Daily" podcast. The player appears as a sleek component at the bottom of the screen with play/pause functionality, allowing visitors to listen to my tech insights while browsing the portfolio.
 
 ## 🛠️ Technology Stack
 
@@ -100,6 +110,9 @@ portfohlio/
 ├── __mocks__/            # Jest mocks
 ├── coverage/             # Test coverage reports
 ├── public/               # Static assets
+│   ├── podcast.mp3      # Podcast audio file
+│   ├── background.jpg   # Background images
+│   └── brian-fohl-resume.docx # Downloadable resume
 ├── .github/              # GitHub Actions workflows
 │   └── workflows/
 │       ├── code-analysis.yml
