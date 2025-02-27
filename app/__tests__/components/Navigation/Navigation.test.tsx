@@ -23,7 +23,7 @@ describe('Navigation', () => {
   it('renders navigation items', () => {
     render(<Navigation {...mockProps} />)
     // Internal navigation items
-    const internalNavItems = ['home', 'expertise', 'work', 'blog', 'contact']
+    const internalNavItems = ['home', 'expertise', 'work', 'contact']
     internalNavItems.forEach(item => {
       const elements = screen.getAllByText(item)
       expect(elements.length).toBeGreaterThan(0)

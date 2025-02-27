@@ -4,7 +4,7 @@
  */
 export const getAssetPath = (path: string): string => {
   const isProduction = process.env.NODE_ENV === 'production';
-  const repository = 'portfohlio-clone';
+  const repository = 'portfohlio';
   return isProduction 
     ? `https://brianfohl.github.io/${repository}${path}`
     : path;

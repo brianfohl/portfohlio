@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const isProduction = process.env.NODE_ENV === 'production';
-const repository = 'portfohlio-clone';
+const repository = 'portfohlio';
 const isDocker = process.env.DOCKER === 'true';
 
 const nextConfig: NextConfig = {

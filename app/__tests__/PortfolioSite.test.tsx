@@ -7,8 +7,7 @@ describe('PortfolioSite', () => {
     home: { top: 0, height: 800 },
     expertise: { top: 800, height: 600 },
     work: { top: 1400, height: 800 },
-    blog: { top: 2200, height: 600 },
-    contact: { top: 2800, height: 600 }
+    contact: { top: 2200, height: 600 }
   };
 
   beforeAll(() => {
@@ -18,7 +17,7 @@ describe('PortfolioSite', () => {
 
   beforeEach(() => {
     // Create test elements for each section
-    const sectionsWithDomElements = ['home', 'expertise', 'work', 'blog', 'contact']
+    const sectionsWithDomElements = ['home', 'expertise', 'work', 'contact']
     sectionsWithDomElements.forEach(id => {
       const element = document.createElement('div')
       element.id = id
@@ -53,7 +52,7 @@ describe('PortfolioSite', () => {
 
   afterEach(() => {
     // Clean up all test elements
-    const sectionsWithDomElements = ['home', 'expertise', 'work', 'blog', 'contact']
+    const sectionsWithDomElements = ['home', 'expertise', 'work', 'contact']
     sectionsWithDomElements.forEach(id => {
       const element = document.getElementById(id)
       if (element) {
@@ -67,7 +66,7 @@ describe('PortfolioSite', () => {
 
   it('renders all sections', () => {
     render(<PortfolioSite />)
-    const sections = ['BRIAN FOHL', 'EXPERTISE', 'WORK EXPERIENCE', 'TECHNICAL BLOG', 'GET IN TOUCH']
+    const sections = ['BRIAN FOHL', 'EXPERTISE', 'WORK EXPERIENCE', 'GET IN TOUCH']
     sections.forEach(heading => {
       expect(screen.getByText(heading)).toBeInTheDocument()
     })
@@ -107,12 +106,12 @@ describe('PortfolioSite', () => {
     })
     expect(screen.getAllByText('work')[0].className).toContain('text-emerald-400')
 
-    // Test blog section
+    // Test contact section
     act(() => {
       window.scrollY = 2300
       fireEvent.scroll(window)
     })
-    expect(screen.getAllByText('blog')[0].className).toContain('text-emerald-400')
+    expect(screen.getAllByText('contact')[0].className).toContain('text-emerald-400')
   })
 
   it('highlights contact section when scrolled to bottom', () => {
