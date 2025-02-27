@@ -6,8 +6,8 @@ describe('PortfolioSite', () => {
   const mockSectionRects = {
     home: { top: 0, height: 800 },
     expertise: { top: 800, height: 600 },
-    work: { top: 1400, height: 1000 },
-    contact: { top: 2400, height: 600 }
+    work: { top: 1400, height: 800 },
+    contact: { top: 2200, height: 600 }
   };
 
   beforeAll(() => {
@@ -17,8 +17,8 @@ describe('PortfolioSite', () => {
 
   beforeEach(() => {
     // Create test elements for each section
-    const sections = ['home', 'expertise', 'work', 'contact']
-    sections.forEach(id => {
+    const sectionsWithDomElements = ['home', 'expertise', 'work', 'contact']
+    sectionsWithDomElements.forEach(id => {
       const element = document.createElement('div')
       element.id = id
       
@@ -52,8 +52,8 @@ describe('PortfolioSite', () => {
 
   afterEach(() => {
     // Clean up all test elements
-    const sections = ['home', 'expertise', 'work', 'contact']
-    sections.forEach(id => {
+    const sectionsWithDomElements = ['home', 'expertise', 'work', 'contact']
+    sectionsWithDomElements.forEach(id => {
       const element = document.getElementById(id)
       if (element) {
         document.body.removeChild(element)
@@ -105,6 +105,13 @@ describe('PortfolioSite', () => {
       fireEvent.scroll(window)
     })
     expect(screen.getAllByText('work')[0].className).toContain('text-emerald-400')
+
+    // Test contact section
+    act(() => {
+      window.scrollY = 2300
+      fireEvent.scroll(window)
+    })
+    expect(screen.getAllByText('contact')[0].className).toContain('text-emerald-400')
   })
 
   it('highlights contact section when scrolled to bottom', () => {
