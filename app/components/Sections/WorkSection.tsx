@@ -6,7 +6,7 @@ const workExperience = [
   {
     title: 'Pipeline Subject Matter Expert',
     company: 'Centers for Medicare and Medicaid Services (via Revacomm / Intellibridge)',
-    period: 'OCT 2023 - Present',
+    period: 'OCT 2023 - MAR 2025',
     achievements: [
       'Led the initiative to improve CI/CD pipelines using Jenkins and Kubernetes, resulting in a significant reduction in build/deployment times and a measurable increase in release reliability.',
       'Guided the development and prototyping of migration plans from GitLab CI to GitHub & Jenkins, strategically enhancing CI/CD efficiency and reliability.',
